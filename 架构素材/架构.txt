@@ -1,0 +1,62 @@
+
+
+样式重置->html网页布局，并加上事先命名好的类名->引入外部css和js，jq文件->完成公共样式的css->模块化搭建网页css骨架，先不考虑细节->测兼容性->样式简化->先实现公共的样式，再实现不同的样式
+
+公共样式
+wrap（包裹层）
+fl（左浮动）
+fr（右浮动）
+clear（清浮动）
+
+header
+nav
+search
+
+main
+	section
+	option
+	main_ad
+side	
+	section_ad
+
+footer
+
+模块化：先写整个页面重复出现的若干样式，如圆角，渐变等，将其提炼出来，再写私有的。
+渐变用css3来写，因为存在兼容性的问题，所以要优雅降级
+
+#header{}
+#nav{}
+#search{}
+.content{}
+.main{}
+.section{}
+.option{}
+.main_ad{}
+.side{}
+.side_section{}
+.side_ad{}
+#footer{}
+
+option .nav{}
+option .nav li{}
+option .nav .active{}
+optison .con{}
+
+测图片圆角：ps里面选择-》修改-》平滑-》修改半径，看与图片半径是否符合
+扣带圆角的图片应自行处理成直角的图片，方便客户使用。
+直角图片变成圆角：border-radius后再overflow：hidden；将超出圆角的部分隐藏起来。
+
+页脚底部的距离在body里面设置，因为那属于整页布局。
+先将页面的骨架搭好，再去看各个浏览器的渲染效果，看是否有挂掉的。
+
+IE6,7下浮动元素margin-bottom值失效问题：包裹层用padding而不是浮动元素margin
+
+
+box-shadow：h-shadow,v-shadow,blur（模糊距离），color
+
+图标拼接按照模块化拼接，不要全部拼到一张图上去。
+
+
+IE6下PNG背景透明的显示问题 
+
+PNG格式比起GIF来表现色彩更丰富，特别是表现渐变以及背景透明的渐变要比GIF格式出色很多，目前，最新的浏览器基本上都支持PNG格式。但是IE6不支持PNG背景透明，会显示一个灰色的框。 
